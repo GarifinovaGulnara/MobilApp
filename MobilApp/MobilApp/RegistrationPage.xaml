@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilApp.RegistrationPage" Title="Регистрация">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="Email" Text="Email" Margin="60,60,0,0" FontSize="14"/>
+            <Frame Margin="60,0" BorderColor="Black">
+                <Entry x:Name="EnEmail" Margin="-10,-19,-19,-19"/>
+            </Frame>
+            <Label x:Name="Login" Text="Login" Margin="60,60,0,0" FontSize="14"/>
+            <Frame Margin="60,0" BorderColor="Black">
+                <Entry x:Name="EnLogin" Margin="-10,-19,-19,-19"/>
+            </Frame>
+
+            <Label x:Name="Pass" Text="Password" Margin="60,60,0,0" FontSize="14"/>
+            <Frame Margin="60,0" BorderColor="Black">
+                <Entry x:Name="EnPass" IsPassword="True" Margin="-10,-19,-19,-19"/>
+            </Frame>
+            <Label x:Name="Pass1" Text="Password" Margin="60,60,0,0" FontSize="14"/>
+            <Frame Margin="60,0" BorderColor="Black">
+                <Entry x:Name="EnPass1" IsPassword="True" Margin="-10,-19,-19,-19"/>
+            </Frame>
+            <Button x:Name="RegBTN" Text="Зарегистрироваться" FontSize="10" Margin="60"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
