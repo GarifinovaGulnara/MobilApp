@@ -17,6 +17,7 @@ namespace MobilApp
         {
             InitializeComponent();
             GetList();
+            ProjList.ItemsSource = projects;
         }
 
         public static void GetList()
@@ -30,7 +31,7 @@ namespace MobilApp
         
         private void ProjList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            Navigation.PushAsync(new InfoProject((Proj)e.Item));
+            Navigation.PushAsync(new InfoProjectPage((Proj)e.Item));
         }
     }
 }

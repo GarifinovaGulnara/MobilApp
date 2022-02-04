@@ -10,10 +10,10 @@ using Xamarin.Forms.Xaml;
 namespace MobilApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class InfoProject : ContentPage
+    public partial class InfoProjectPage : TabbedPage
     {
         public static string Name;
-        public InfoProject(Proj proj)
+        public InfoProjectPage(Proj proj)
         {
             Name = proj.Name;
             InitializeComponent();

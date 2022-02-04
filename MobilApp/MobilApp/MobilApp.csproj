@@ -19,7 +19,7 @@
     <EmbeddedResource Update="ChooseProject.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="InfoProject.xaml">
+    <EmbeddedResource Update="InfoProjectPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="RegistrationPage.xaml">
