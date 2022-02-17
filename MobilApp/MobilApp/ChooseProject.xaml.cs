@@ -33,5 +33,10 @@ namespace MobilApp
         {
             Navigation.PushAsync(new InfoProjectPage((Proj)e.Item));
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CreateProjPage());
+        }
     }
 }

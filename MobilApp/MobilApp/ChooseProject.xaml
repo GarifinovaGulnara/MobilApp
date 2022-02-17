@@ -1,8 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobilApp.ChooseProject"
+             x:Class="MobilApp.ChooseProject" 
+             Visual="Material"
              Title="Проекты">
+
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label FontFamily="MaterialIconsFont"
+                   FontSize="18"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="EndAndExpand"
+                   Text="&#xe145;"
+                   TextColor="White">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="ProjList" ItemTapped="ProjList_ItemTapped">

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilApp.UpdateProjPage"
+             Title="Изменить проект">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <Entry Text="Имя проекта"/>
+            </Frame>
+            <Frame>
+                <Entry Text="Описание"/>
+            </Frame>
+            <Frame>
+                <Entry Text="Телефон №1"/>
+            </Frame>
+            <Frame>
+                <Entry Text="E-mail"/>
+            </Frame>
+            <Frame>
+                <Entry Text="Адрес"/>
+            </Frame>
+            <Grid>
+                <Button Text="Отмена" Margin="55, 20,200,0"/>
+                <Button Text="Изменить" Margin="210,20,55,0"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

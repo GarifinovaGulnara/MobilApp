@@ -22,7 +22,7 @@ namespace MobilApp
 
         private void LogIn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ChooseProject());
+            Navigation.PushModalAsync(new NavigationPage(new ChooseProject()));
         }
     }
 }

@@ -2,23 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobilApp.MainPage">
-
+    <ScrollView>
     <StackLayout>
-        <Image Source="logo.png" Margin="60"/>
-
-        <Label x:Name="Login" Text="Login" Margin="60,30,0,0" FontSize="14"/>
-        <Frame Margin="60,0" BorderColor="Black">
-            <Entry x:Name="EnLogin" Margin="-10,-19,-19,-19"/>
+            <Image Source="logo.png" Margin="60"/>
+        
+            <Frame Margin="60,0" BorderColor="Black">
+            <Entry x:Name="EnLogin" Text="Логин" Margin="-10,-19,-19,-19"/>
         </Frame>
 
-        <Label x:Name="Pass" Text="Password" Margin="60,30,0,0" FontSize="14"/>
         <Frame Margin="60,0" BorderColor="Black">
-            <Entry x:Name="EnPass" IsPassword="True" Margin="-10,-19,-19,-19"/>
+            <Entry x:Name="EnPass"  IsPassword="True" Margin="-10,-19,-19,-19"/>
         </Frame>
         <Grid>
             <Button x:Name="Reg" Text="Зарегистрироваться" FontSize="10" Margin="55, 20,200,0" Clicked="Reg_Clicked"/>
             <Button x:Name="LogIn" Text="Войти" FontSize="10" Margin="210,20,55,0" Clicked="LogIn_Clicked"/>
         </Grid>
     </StackLayout>
-
+    </ScrollView>
 </ContentPage>
