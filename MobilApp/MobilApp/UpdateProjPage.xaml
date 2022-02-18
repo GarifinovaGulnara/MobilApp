@@ -10,7 +10,7 @@
                    FontSize="18"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="EndAndExpand"
-                   Text="&#xe145;"
+                   Text="delete_sweep;"
                    TextColor="White">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
