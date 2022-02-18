@@ -21,5 +21,19 @@ namespace MobilApp
         {
            
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            App.Db.SaveItem(new db.ProjectModel(NameProj.Text, AboutProj.Text, Phone.Text, Email.Text, Address.Text));
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            NameProj.Text = " ";
+            AboutProj.Text = " ";
+            Phone.Text = " ";
+            Email.Text = " ";
+            Address.Text = " ";
+        }
     }
 }

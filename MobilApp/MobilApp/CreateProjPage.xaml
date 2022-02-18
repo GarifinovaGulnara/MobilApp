@@ -6,23 +6,23 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame>
-                <Entry Text="Имя проекта"/>
+                <Entry x:Name="NameProj" Text="Имя проекта"/>
             </Frame>
             <Frame>
-                <Entry Text="Описание" />
+                <Entry x:Name="AboutProj" Text="Описание" />
             </Frame>
             <Frame>
-                <Entry Text="Телефон №1"/>
+                <Entry x:Name="Phone" Text="Телефон №1"/>
             </Frame>
             <Frame>
-                <Entry Text="E-mail"/>
+                <Entry x:Name="Email" Text="E-mail"/>
             </Frame>
             <Frame>
-                <Entry Text="Адрес"/>
+                <Entry x:Name="Address" Text="Адрес"/>
             </Frame>
             <Grid>
-                <Button CornerRadius="30" Background="#FF6EB4FF" TextColor="White" Text="Отмена" Margin="55, 20,200,0"/>
-                <Button CornerRadius="30" Background="#FF6EB4FF" TextColor="White" Text="Добавить" Margin="210,20,55,0"/>
+                <Button CornerRadius="30" Background="#FF6EB4FF" TextColor="White" Clicked="Button_Clicked_1" Text="Отмена" Margin="55, 20,200,0"/>
+                <Button CornerRadius="30" Background="#FF6EB4FF" TextColor="White" Clicked="Button_Clicked" Text="Добавить" Margin="210,20,55,0"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
