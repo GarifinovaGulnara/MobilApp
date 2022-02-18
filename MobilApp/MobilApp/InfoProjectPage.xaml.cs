@@ -18,5 +18,10 @@ namespace MobilApp
             Name = proj.Name;
             InitializeComponent();
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new UpdateProjPage());
+        }
     }
 }

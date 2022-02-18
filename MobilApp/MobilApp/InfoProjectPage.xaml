@@ -4,6 +4,21 @@
              x:Class="MobilApp.InfoProjectPage"
             xmlns:local="clr-namespace:MobilApp"
             Title="{x:Static local:InfoProjectPage.Name}">
+
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label FontFamily="MaterialIconsFont"
+                   FontSize="18"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="EndAndExpand"
+                   Text="&#xe145;"
+                   TextColor="White">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ContentPage Title="О проекте">
         <ScrollView>
             <StackLayout>

@@ -21,7 +21,7 @@
             <Frame Margin="60,0" BorderColor="Black">
                 <Entry x:Name="EnPass1" IsPassword="True" Margin="-10,-19,-19,-19"/>
             </Frame>
-            <Button x:Name="RegBTN" Text="Зарегистрироваться" FontSize="10" Margin="60"/>
+            <Button x:Name="RegBTN" CornerRadius="30" Background="#FF6EB4FF" TextColor="White" Text="Зарегистрироваться" FontSize="10" Margin="60"/>
 
         </StackLayout>
     </ContentPage.Content>
