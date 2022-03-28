@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using Xamarin.Forms;
+using MobilApp.View;
 using Xamarin.Forms.Xaml;
 
 [assembly: ExportFont("MaterialIcons-Regular.ttf", Alias = "MaterialIconsFont")]

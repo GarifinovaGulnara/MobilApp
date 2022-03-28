@@ -5,7 +5,7 @@ using SQLite;
 
 namespace MobilApp.db
 {
-    [Table("Project")]
+    [Table("Project77")]
     public class ProjectModel
     {
         public ProjectModel()

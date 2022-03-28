@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilApp.InfoProjectPage"
+            xmlns:local="clr-namespace:MobilApp">
+
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Grid>
+                <Label Text="{x:Static local:InfoProjectPage.Name}" FontSize="18" TextColor="White" HorizontalOptions="Center"/>
+                <Label FontFamily="MaterialIconsFont"
+                   FontSize="24"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="EndAndExpand"
+                   Text="edit;"
+                   TextColor="White">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage Title="О проекте">
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Описание" HorizontalTextAlignment="Center"/>
+                <Label x:Name="lblDes" Padding="10,20" TextColor="Black" FontSize="16" FontFamily="Comic Sans MS"></Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage >
+    <ContentPage Title="Картинки">
+        <StackLayout>
+            <Grid Padding="50,20,30,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140"/>
+                    <RowDefinition Height="140"/>
+                    <RowDefinition Height="140"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="img.png" Grid.Column="0" Grid.Row="0"/>
+                <Image Source="img.png" Grid.Column="0" Grid.Row="1"/>
+                <Image Source="img.png" Grid.Column="1" Grid.Row="0"/>
+                <Image Source="img.png" Grid.Column="1" Grid.Row="1"/>
+                <Image Source="img.png" Grid.Column="0" Grid.Row="2"/>
+                <Image Source="img.png" Grid.Column="1" Grid.Row="2"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Контакты">
+        <StackLayout>
+            <Label x:Name="Phone" Text="Телефон №1" Margin="60,60,0,0" FontSize="14"/>
+            <Frame Margin="60,0" BorderColor="Black">
+                <Entry x:Name="EnPhone" IsReadOnly="True" Margin="-10,-19,-19,-19"/>
+            </Frame>
+
+            <Label x:Name="Email" Text="Email" Margin="60,60,0,0" FontSize="14"/>
+            <Frame Margin="60,0" BorderColor="Black">
+                <Entry x:Name="EnEmail" IsReadOnly="True" Margin="-10,-19,-19,-19"/>
+            </Frame>
+            <Label x:Name="Address" Text="Адресс" Margin="60,60,0,0" FontSize="14"/>
+            <Frame Margin="60,0" BorderColor="Black">
+                <Entry x:Name="EnAddress" IsReadOnly="True" Margin="-10,-19,-19,-19"/>
+            </Frame>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

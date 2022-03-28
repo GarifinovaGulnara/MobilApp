@@ -3,36 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using MobilApp.db;
+using MobilApp.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MobilApp
+namespace MobilApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChooseProject : ContentPage
     {
-        static List<Proj> projects;
         public ChooseProject()
         {
+            BindingContext = new ChooseProjVM { Navigation = this.Navigation };
             InitializeComponent();
-            GetList();
-            ProjList.ItemsSource = projects;
         }
 
-        public static void GetList()
+        protected override void OnAppearing()
         {
-            projects = new List<Proj>();
-            for (int i = 1; i<18; i++)
-            {
-                projects.Add(new Proj($"Проект {i}"));
-            }
+            base.OnAppearing();
         }
         
-        private void ProjList_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            Navigation.PushAsync(new InfoProjectPage((Proj)e.Item));
-        }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {

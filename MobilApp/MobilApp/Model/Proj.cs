@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MobilApp
+namespace MobilApp.Model
 {
     public class Proj
     {
