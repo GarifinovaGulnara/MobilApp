@@ -14,29 +14,20 @@ namespace MobilApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InfoProjectPage : TabbedPage
     {
-        public static string Name;
-        ProjectModel pr;
-        public InfoProjectPage(ProjVM projViewModel)
+        public InfoProjectPage(InfoProjVM projViewModel)
         {
             InitializeComponent();
-            //Name = proj.Name;
-            //pr = proj;
-            //Fill();
-            //ViewModel = projViewModel;
-            //this.BindingContext = ViewModel;
+            BindingContext = projViewModel;
         }
-        private void Fill()
-        {
-            EnPhone.Text = pr.PhoneNum;
-            EnAddress.Text = pr.Adress;
-            EnEmail.Text = pr.Email;
-            lblDes.Text = pr.Description;
+        //private void Fill()
+        //{
+        //    EnPhone.Text = pr.PhoneNum;
+        //    EnAddress.Text = pr.Adress;
+        //    EnEmail.Text = pr.Email;
+        //    lblDes.Text = pr.Description;
 
-        }
+        //}
         
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new UpdateProjPage(pr));
-        }
+        
     }
 }

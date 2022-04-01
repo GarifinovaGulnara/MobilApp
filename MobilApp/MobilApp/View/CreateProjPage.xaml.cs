@@ -7,33 +7,18 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MobilApp.ViewModel;
 
-namespace MobilApp
+namespace MobilApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreateProjPage : ContentPage
     {
-        public CreateProjPage()
+        public CreateProjPage(CreateProjVM createProjVM)
         {
             InitializeComponent();
+            BindingContext = createProjVM;
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                App.Db.SaveItem(new ProjectModel(NameProj.Text, AboutProj.Text, Phone.Text, Email.Text, Address.Text));
-                await Navigation.PopAsync();
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("", ex.Message, "ok");
-            }
-        }
-
-        private async void Button_Clicked_1(object sender, EventArgs e)
-        {
-            await Navigation.PopAsync();
-        }
     }
 }

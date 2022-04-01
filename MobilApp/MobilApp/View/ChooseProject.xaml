@@ -13,16 +13,16 @@
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="EndAndExpand"
                    Text="&#xe145;"
-                   TextColor="White">
+                   TextColor="White" Margin="0,0,20,0">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding CreateProjCommand}" CommandParameter="{Binding}"/>
                     </Label.GestureRecognizers>
                 </Label>
             </Grid>
         </StackLayout>
     </NavigationPage.TitleView>
     <StackLayout>
-        <ListView x:Name="ProjList" ItemsSource="{Binding ProjList}">
+        <ListView x:Name="ProjList" ItemsSource="{Binding ProjList}" SelectedItem="{Binding SelectedProj}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}" TextColor="Black" />

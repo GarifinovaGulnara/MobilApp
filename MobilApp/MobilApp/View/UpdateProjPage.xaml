@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobilApp.UpdateProjPage"
+             x:Class="MobilApp.View.UpdateProjPage"
              Title="Изменить проект">
 
     <NavigationPage.TitleView>
@@ -10,10 +10,10 @@
                    FontSize="18"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="EndAndExpand"
-                   Text="delete_sweep;"
-                   TextColor="White">
+                   Text="delete_sweep"
+                   TextColor="White" Margin="0,0,20,0">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    <TapGestureRecognizer Command="{Binding DeleteCommand}" CommandParameter="{Binding}" />
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
@@ -21,23 +21,23 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame>
-                <Entry x:Name="NameProj" Text="Имя проекта"/>
+                <Entry x:Name="NameProj" Text="{Binding Name}"/>
             </Frame>
             <Frame>
-                <Entry x:Name="AboutProj" Text="Описание" />
+                <Entry x:Name="AboutProj" Text="{Binding Description}" HeightRequest="300"/>
             </Frame>
             <Frame>
-                <Entry x:Name="Phone" Text="Телефон №1"/>
+                <Entry x:Name="Phone" Text="{Binding PhoneNum}"/>
             </Frame>
             <Frame>
-                <Entry x:Name="Email" Text="E-mail"/>
+                <Entry x:Name="Email" Text="{Binding Email}"/>
             </Frame>
             <Frame>
-                <Entry x:Name="Address" Text="Адрес"/>
+                <Entry x:Name="Address" Text="{Binding Adress}"/>
             </Frame>
             <Grid>
-                <Button CornerRadius="30" Background="#FF6EB4FF" TextColor="White" Clicked="Button_Clicked_1" Text="Отмена" Margin="55, 20,200,0"/>
-                <Button CornerRadius="30" Background="#FF6EB4FF" TextColor="White" Clicked="Button_Clicked" Text="Изменить" Margin="210,20,55,0"/>
+                <Button Text="Отмена" CornerRadius="30" Background="#FF6EB4FF" TextColor="White" Command="{Binding BackCommand}" CommandParameter="{Binding}" Margin="55, 20,200,0"/>
+                <Button Text="Сохранить" CornerRadius="30" Background="#FF6EB4FF" TextColor="White" Command="{Binding SaveCommand}" CommandParameter="{Binding}" Margin="210,20,55,0"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

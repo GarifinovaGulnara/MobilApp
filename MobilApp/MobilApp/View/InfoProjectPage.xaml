@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobilApp.InfoProjectPage"
+             x:Class="MobilApp.View.InfoProjectPage"
             xmlns:local="clr-namespace:MobilApp">
 
     <NavigationPage.TitleView>
         <StackLayout>
             <Grid>
-                <Label Text="{x:Static local:InfoProjectPage.Name}" FontSize="18" TextColor="White" HorizontalOptions="Center"/>
+                <Label Text="{Binding Name}" FontSize="18" TextColor="White" HorizontalOptions="Center"/>
                 <Label FontFamily="MaterialIconsFont"
                    FontSize="24"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="EndAndExpand"
-                   Text="edit;"
+                   Text="edit"
                    TextColor="White">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding UpdateCommand}" CommandParameter="{Binding}"/>
                     </Label.GestureRecognizers>
                 </Label>
             </Grid>
@@ -25,7 +25,7 @@
         <ScrollView>
             <StackLayout>
                 <Label Text="Описание" HorizontalTextAlignment="Center"/>
-                <Label x:Name="lblDes" Padding="10,20" TextColor="Black" FontSize="16" FontFamily="Comic Sans MS"></Label>
+                <Label x:Name="lblDes" Text="{Binding Description}" Padding="10,20" TextColor="Black" FontSize="16" FontFamily="Comic Sans MS"></Label>
             </StackLayout>
         </ScrollView>
     </ContentPage >
@@ -54,16 +54,16 @@
         <StackLayout>
             <Label x:Name="Phone" Text="Телефон №1" Margin="60,60,0,0" FontSize="14"/>
             <Frame Margin="60,0" BorderColor="Black">
-                <Entry x:Name="EnPhone" IsReadOnly="True" Margin="-10,-19,-19,-19"/>
+                <Entry x:Name="EnPhone" Text="{Binding PhoneNum}" IsReadOnly="True" Margin="-10,-19,-19,-19"/>
             </Frame>
 
             <Label x:Name="Email" Text="Email" Margin="60,60,0,0" FontSize="14"/>
             <Frame Margin="60,0" BorderColor="Black">
-                <Entry x:Name="EnEmail" IsReadOnly="True" Margin="-10,-19,-19,-19"/>
+                <Entry x:Name="EnEmail" Text="{Binding Email}" IsReadOnly="True" Margin="-10,-19,-19,-19"/>
             </Frame>
             <Label x:Name="Address" Text="Адресс" Margin="60,60,0,0" FontSize="14"/>
             <Frame Margin="60,0" BorderColor="Black">
-                <Entry x:Name="EnAddress" IsReadOnly="True" Margin="-10,-19,-19,-19"/>
+                <Entry x:Name="EnAddress" Text="{Binding Adress}" IsReadOnly="True" Margin="-10,-19,-19,-19"/>
             </Frame>
         </StackLayout>
     </ContentPage>

@@ -1,29 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using MobilApp.View;
-using MobilApp.Model;
-using System.Windows.Input;
-using MobilApp.db;
 using System.ComponentModel;
+using System.Text;
 using Xamarin.Forms;
-using System.Collections.ObjectModel;
+using MobilApp.db;
+using System.Windows.Input;
 
 namespace MobilApp.ViewModel
 {
-    
-    public class InfoProjVM : INotifyPropertyChanged
+    public class CreateProjVM : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public INavigation Navigation { get; set; }
-        public ICommand UpdateCommand { protected set; get; }
-        ChooseProjVM selectedProj;
+        public ICommand CreateCommand { protected set; get; }
+        public ICommand BackCommand { protected set; get; }
         public ProjectModel Project { get; set; }
-        
-        public InfoProjVM()
+
+        public CreateProjVM()
         {
-            Project = new ProjectModel();
-            UpdateCommand = new Command(UpdateBtn);
+            Project = new ProjectModel("", "","","","");
+            CreateCommand = new Command(CreateBtn);
+            BackCommand = new Command(Back);
+        }
+        private async void CreateBtn()
+        {
+            try
+            {
+                App.Db.SaveItem(Project);
+                await Navigation.PopAsync();
+            }
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("", ex.Message, "ok");
+            }
         }
 
         public string Name { get => Project.Name; set { Project.Name = value; OnPropertyChanged("Name"); } }
@@ -31,26 +40,14 @@ namespace MobilApp.ViewModel
         public string PhoneNum { get => Project.PhoneNum; set { Project.PhoneNum = value; OnPropertyChanged("PhoneNum"); } }
         public string Email { get => Project.Email; set { Project.Email = value; OnPropertyChanged("Email"); } }
         public string Adress { get => Project.Adress; set { Project.Adress = value; OnPropertyChanged("Adress"); } }
-        public ChooseProjVM ListVM { get { return selectedProj; } 
-        set
-            {
-                if (selectedProj != value)
-                {
-                    selectedProj = value;
-                    OnPropertyChanged("ListVM");
-                }
-            }
+        private void Back()
+        {
+            Navigation.PopAsync();
         }
         protected void OnPropertyChanged(string propName)
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-
-        private async void UpdateBtn()
-        {
-            await Navigation.PushAsync(new UpdateProjPage(new UpdateProjVM { Project = Project, Navigation=this.Navigation}));
-        }
     }
-
 }
